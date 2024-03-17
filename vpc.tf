@@ -1,13 +1,8 @@
-# Configure the AWS Provider
-provider "aws" {
-  region = "eu-west-1"
-}
-
 # Create a VPC
-resource "aws_vpc" "docker-on-aws-ec2-vpc" {
-  cidr_block = "10.255.0.0/16"
+resource "aws_vpc" "vpc" {
+  cidr_block = var.vpc_cidr_block
   tags = {
-    Name = "docker-on-aws-ec2-vpc"
-    creator = "terraform"
+    Name = var.vpc_name
+    creator = var.creator
   }
 }
