@@ -1,4 +1,14 @@
 terraform {
+  cloud {
+    organization = "marco-nastasi-org"
+
+    workspaces {
+      name = "docker-on-aws-ec2"
+    }
+  }
+}
+
+terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
